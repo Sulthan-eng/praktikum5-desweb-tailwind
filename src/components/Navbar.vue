@@ -5,55 +5,28 @@ import {RouterLink} from "vue-router";
 <template>
   <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
-  <nav class="relative bg-black after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-24 items-center justify-between">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
-          <!-- Mobile menu button-->
-          <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-              <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:items-start">
-          <div class="flex shrink-0 flex items-center h-full">
-            <img src="/Full Logo Sulthan Feast.png" alt="Sulthan Feast Logo" class="h-16 w-auto" />
-          </div>
-          <div class="hidden sm:ml-6 sm:flex sm:justify-center sm:flex-1 h-full sm:pt-4">
-            <div class="flex space-x-4">
-              <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <RouterLink to="/" class="rounded-md bg-yellow-600 px-3 py-2 text-sm font-medium text-white">
-                Home
-              </RouterLink>
-              <RouterLink to="/contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">
-                Contact
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-
-
+  <nav class="bg-black text-white fixed w-full z-20 top-0 start-0 border-b border-default">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" />
+        <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Sulthan Feast</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+          <li>
+            <a href="/" class="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="/contact" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Contact</a>
+          </li>
+        </ul>
       </div>
     </div>
-
-    <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
-      <div class="space-y-1 px-2 pt-2 pb-3">
-        <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-        <RouterLink to="/" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">
-          Home
-        </RouterLink>
-        <RouterLink to="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">
-          Contact
-        </RouterLink>
-      </div>
-    </el-disclosure>
   </nav>
 
 </template>
